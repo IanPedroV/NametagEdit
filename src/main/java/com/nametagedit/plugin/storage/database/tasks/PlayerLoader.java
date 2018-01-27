@@ -16,7 +16,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.UUID;
 
-@AllArgsConstructor
 public class PlayerLoader extends BukkitRunnable {
 
     public PlayerLoader(UUID uuid, Plugin plugin, NametagHandler handler, HikariDataSource hikari) {

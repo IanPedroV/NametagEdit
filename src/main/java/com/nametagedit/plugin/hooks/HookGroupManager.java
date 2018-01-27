@@ -7,7 +7,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 
-@AllArgsConstructor
 public class HookGroupManager implements Listener {
 
     private NametagHandler handler;

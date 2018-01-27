@@ -6,7 +6,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.tyrannyofheaven.bukkit.zPermissions.ZPermissionsPlayerUpdateEvent;
 
-@AllArgsConstructor
 public class HookZPermissions implements Listener {
 
     private NametagHandler handler;

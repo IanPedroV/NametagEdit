@@ -10,7 +10,6 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.UUID;
 
-@AllArgsConstructor
 public class PlayerDeleter extends BukkitRunnable {
 
     private UUID uuid;

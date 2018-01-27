@@ -8,7 +8,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.scheduler.BukkitRunnable;
 
-@AllArgsConstructor
 public class HookLibsDisguise implements Listener {
 
     private NametagEdit plugin;

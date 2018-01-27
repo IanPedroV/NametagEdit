@@ -9,7 +9,6 @@ import org.bukkit.entity.Player;
 
 import java.util.*;
 
-@AllArgsConstructor
 public class NametagManager {
 
     private final HashMap<String, FakeTeam> TEAMS = new HashMap<>();

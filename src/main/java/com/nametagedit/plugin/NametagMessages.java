@@ -5,7 +5,6 @@ import lombok.AllArgsConstructor;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 
-@AllArgsConstructor
 public enum NametagMessages {
 
     SET_PRIORITY("Set sort priority to %s for %s"),

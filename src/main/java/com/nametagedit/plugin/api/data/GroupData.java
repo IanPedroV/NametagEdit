@@ -1,6 +1,5 @@
 package com.nametagedit.plugin.api.data;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.bukkit.permissions.Permission;
 import org.bukkit.permissions.PermissionDefault;
@@ -9,8 +8,6 @@ import org.bukkit.permissions.PermissionDefault;
  * This class represents a group nametag. There
  * are several properties available.
  */
-@Data
-@AllArgsConstructor
 public class GroupData implements INametag {
 
     private String groupName;
@@ -19,6 +16,10 @@ public class GroupData implements INametag {
     private String permission;
     private Permission bukkitPermission;
     private int sortPriority;
+
+    public GroupData() {
+
+    }
 
 
     public GroupData(String groupName, String prefix, String suffix, String permission, Permission bukkitPermission, int sortPriority) {
@@ -30,9 +31,6 @@ public class GroupData implements INametag {
         this.sortPriority = sortPriority;
     }
 
-    public GroupData() {
-
-    }
 
     public void setPermission(String permission) {
         this.permission = permission;

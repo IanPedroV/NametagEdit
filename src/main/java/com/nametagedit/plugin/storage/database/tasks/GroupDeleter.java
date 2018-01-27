@@ -9,7 +9,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-@AllArgsConstructor
 public class GroupDeleter extends BukkitRunnable {
 
     private String groupName;

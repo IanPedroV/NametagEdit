@@ -3,8 +3,6 @@ package com.nametagedit.plugin.packets;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-@Getter
-@AllArgsConstructor
 enum PacketData {
 
     v1_7("e", "c", "d", "a", "f", "g", "b", "NA", "NA"),
@@ -42,9 +40,6 @@ enum PacketData {
         return members;
     }
 
-    public void setMembers(String members) {
-        this.members = members;
-    }
 
     public String getPrefix() {
         return prefix;
@@ -66,47 +61,29 @@ enum PacketData {
         return teamName;
     }
 
-    public void setTeamName(String teamName) {
-        this.teamName = teamName;
-    }
 
     public String getParamInt() {
         return paramInt;
     }
 
-    public void setParamInt(String paramInt) {
-        this.paramInt = paramInt;
-    }
 
     public String getPackOption() {
         return packOption;
     }
 
-    public void setPackOption(String packOption) {
-        this.packOption = packOption;
-    }
 
     public String getDisplayName() {
         return displayName;
     }
 
-    public void setDisplayName(String displayName) {
-        this.displayName = displayName;
-    }
 
     public String getPush() {
         return push;
     }
 
-    public void setPush(String push) {
-        this.push = push;
-    }
 
     public String getVisibility() {
         return visibility;
     }
 
-    public void setVisibility(String visibility) {
-        this.visibility = visibility;
-    }
 }

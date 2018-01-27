@@ -17,7 +17,6 @@ import java.sql.*;
 /**
  * This class converts to and from Flatfile and MySQL
  */
-@AllArgsConstructor
 public class ConverterTask extends BukkitRunnable {
 
     private boolean databaseToFile;

@@ -13,7 +13,6 @@ import org.bukkit.entity.Player;
  * Implements the INametagAPI interface. There only
  * exists one instance of this class.
  */
-@AllArgsConstructor
 public final class NametagAPI implements INametagApi {
 
     private NametagHandler handler;

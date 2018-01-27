@@ -12,7 +12,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-@AllArgsConstructor
 public class DatabaseUpdater extends BukkitRunnable {
 
     private NametagHandler handler;

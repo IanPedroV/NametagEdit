@@ -20,7 +20,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-@AllArgsConstructor
 public class NametagCommand implements CommandExecutor, TabExecutor {
 
     private NametagHandler handler;

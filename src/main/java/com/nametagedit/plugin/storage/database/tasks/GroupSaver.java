@@ -11,7 +11,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-@AllArgsConstructor
 public class GroupSaver extends BukkitRunnable {
 
     private GroupData[] groupData;

@@ -8,7 +8,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import ru.tehkode.permissions.events.PermissionEntityEvent;
 
-@AllArgsConstructor
 public class HookPermissionsEX implements Listener {
 
     private NametagHandler handler;
