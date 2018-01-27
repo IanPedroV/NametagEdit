@@ -13,6 +13,10 @@ public class HookPermissionsEX implements Listener {
 
     private NametagHandler handler;
 
+    public HookPermissionsEX(NametagHandler handler) {
+        this.handler = handler;
+    }
+
     @EventHandler
     public void onPermissionEntityEvent(PermissionEntityEvent event) {
         Player player = Bukkit.getPlayerExact(event.getEntity().getName());

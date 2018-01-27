@@ -17,6 +17,11 @@ public class GroupSaver extends BukkitRunnable {
     private GroupData[] groupData;
     private HikariDataSource hikari;
 
+    public GroupSaver(GroupData[] groupData, HikariDataSource hikari) {
+        this.groupData = groupData;
+        this.hikari = hikari;
+    }
+
     @Override
     public void run() {
         try (Connection connection = hikari.getConnection()) {

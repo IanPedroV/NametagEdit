@@ -19,6 +19,12 @@ public class DatabaseUpdater extends BukkitRunnable {
     private HikariDataSource hikari;
     private NametagEdit plugin;
 
+    public DatabaseUpdater(NametagHandler handler, HikariDataSource hikari, NametagEdit plugin) {
+        this.handler = handler;
+        this.hikari = hikari;
+        this.plugin = plugin;
+    }
+
     private static final int CURRENT_DATABASE_VERSION = 3;
 
     @Override

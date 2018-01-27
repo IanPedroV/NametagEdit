@@ -15,6 +15,11 @@ public class GroupDeleter extends BukkitRunnable {
     private String groupName;
     private HikariDataSource hikari;
 
+    public GroupDeleter(String groupName, HikariDataSource hikari) {
+        this.groupName = groupName;
+        this.hikari = hikari;
+    }
+
     @Override
     public void run() {
         try (Connection connection = hikari.getConnection()) {

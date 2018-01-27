@@ -16,6 +16,12 @@ public class GroupConfigUpdater extends BukkitRunnable {
     private String value;
     private HikariDataSource hikari;
 
+    public GroupConfigUpdater(String setting, String value, HikariDataSource hikari) {
+        this.setting = setting;
+        this.value = value;
+        this.hikari = hikari;
+    }
+
     @Override
     public void run() {
         try (Connection connection = hikari.getConnection()) {

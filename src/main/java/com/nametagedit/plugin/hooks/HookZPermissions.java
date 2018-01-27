@@ -11,6 +11,10 @@ public class HookZPermissions implements Listener {
 
     private NametagHandler handler;
 
+    public HookZPermissions(NametagHandler handler) {
+        this.handler = handler;
+    }
+
     @EventHandler
     public void onZPermissionsRankChangeEvent(ZPermissionsPlayerUpdateEvent event) {
         handler.applyTagToPlayer(event.getPlayer());

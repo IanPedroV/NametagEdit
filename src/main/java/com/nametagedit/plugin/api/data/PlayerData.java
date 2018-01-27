@@ -26,6 +26,14 @@ public class PlayerData implements INametag {
 
     }
 
+    public PlayerData(String name, UUID uuid, String prefix, String suffix, int sortPriority) {
+        this.name = name;
+        this.uuid = uuid;
+        this.prefix = prefix;
+        this.suffix = suffix;
+        this.sortPriority = sortPriority;
+    }
+
     public static PlayerData fromFile(String key, YamlConfiguration file) {
         if (!file.contains("Players." + key)) return null;
         PlayerData data = new PlayerData();
@@ -38,8 +46,48 @@ public class PlayerData implements INametag {
     }
 
     @Override
-    public boolean isPlayerTag() {
-        return true;
+    public String getPrefix() {
+        return this.getPrefix();
     }
 
+    public void setPrefix(String prefix) {
+        this.prefix = prefix;
+    }
+
+    @Override
+    public String getSuffix() {
+        return this.getSuffix();
+    }
+
+    @Override
+    public int getSortPriority() {
+        return this.sortPriority;
+    }
+
+    @Override
+    public boolean isPlayerTag() {
+        return isPlayerTag();
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setUuid(UUID uuid) {
+        this.uuid = uuid;
+    }
+    public void setSuffix(String suffix) {
+        this.suffix = suffix;
+    }
+    public void setSortPriority(int sortPriority) {
+        this.sortPriority = sortPriority;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public UUID getUuid() {
+        return uuid;
+    }
 }

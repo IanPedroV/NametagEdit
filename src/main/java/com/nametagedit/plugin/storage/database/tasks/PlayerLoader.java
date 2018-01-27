@@ -19,6 +19,13 @@ import java.util.UUID;
 @AllArgsConstructor
 public class PlayerLoader extends BukkitRunnable {
 
+    public PlayerLoader(UUID uuid, Plugin plugin, NametagHandler handler, HikariDataSource hikari) {
+        this.uuid = uuid;
+        this.plugin = plugin;
+        this.handler = handler;
+        this.hikari = hikari;
+    }
+
     private UUID uuid;
     private Plugin plugin;
     private NametagHandler handler;

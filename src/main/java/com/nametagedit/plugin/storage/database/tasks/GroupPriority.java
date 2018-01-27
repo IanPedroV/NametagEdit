@@ -16,6 +16,12 @@ public class GroupPriority extends BukkitRunnable {
     private int priority;
     private HikariDataSource hikari;
 
+    public GroupPriority(String group, int priority, HikariDataSource hikari) {
+        this.group = group;
+        this.priority = priority;
+        this.hikari = hikari;
+    }
+
     @Override
     public void run() {
         try (Connection connection = hikari.getConnection()) {

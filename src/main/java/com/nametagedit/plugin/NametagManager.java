@@ -16,6 +16,10 @@ public class NametagManager {
     private final HashMap<String, FakeTeam> CACHED_FAKE_TEAMS = new HashMap<>();
     private NametagEdit plugin;
 
+    public NametagManager(NametagEdit plugin) {
+        this.plugin = plugin;
+    }
+
     /**
      * Gets the current team given a prefix and suffix
      * If there is no team similar to this, then a new

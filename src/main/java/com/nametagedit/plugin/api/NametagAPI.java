@@ -19,6 +19,11 @@ public final class NametagAPI implements INametagApi {
     private NametagHandler handler;
     private NametagManager manager;
 
+    public NametagAPI(NametagHandler handler, NametagManager manager) {
+        this.handler = handler;
+        this.manager = manager;
+    }
+
     @Override
     public Nametag getNametag(Player player) {
         FakeTeam team = manager.getFakeTeam(player.getName());
@@ -92,8 +97,7 @@ public final class NametagAPI implements INametagApi {
      * Private helper function to reduce redundancy
      */
     private void setNametagAlt(Player player, String prefix, String suffix) {
-        Nametag nametag = new Nametag(
-                handler.formatWithPlaceholders(player, prefix),
+        Nametag nametag = new Nametag(handler.formatWithPlaceholders(player, prefix),
                 handler.formatWithPlaceholders(player, suffix)
         );
 

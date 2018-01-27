@@ -12,6 +12,10 @@ public class HookGroupManager implements Listener {
 
     private NametagHandler handler;
 
+    public HookGroupManager(NametagHandler handler) {
+        this.handler = handler;
+    }
+
     @EventHandler
     public void onGMUserEvent(GMUserEvent event) {
         Player player = event.getUser().getBukkitPlayer();

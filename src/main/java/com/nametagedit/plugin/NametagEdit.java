@@ -92,4 +92,11 @@ public class NametagEdit extends JavaPlugin {
                 .toString());
     }
 
+    public NametagHandler getHandler() {
+        return handler;
+    }
+
+    public void setHandler(NametagHandler handler) {
+        this.handler = handler;
+    }
 }

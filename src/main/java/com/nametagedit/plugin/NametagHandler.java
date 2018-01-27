@@ -506,4 +506,111 @@ public class NametagHandler implements Listener {
         });
     }
 
+    public NametagEdit getPlugin() {
+        return plugin;
+    }
+
+    public void setPlugin(NametagEdit plugin) {
+        this.plugin = plugin;
+    }
+
+    public boolean isLongNametagsEnabled() {
+        return longNametagsEnabled;
+    }
+
+    public void setLongNametagsEnabled(boolean longNametagsEnabled) {
+        this.longNametagsEnabled = longNametagsEnabled;
+    }
+
+    public AbstractConfig getAbstractConfig() {
+        return abstractConfig;
+    }
+
+    public void setAbstractConfig(AbstractConfig abstractConfig) {
+        this.abstractConfig = abstractConfig;
+    }
+
+    public ReadWriteLock getReadWriteLock() {
+        return readWriteLock;
+    }
+
+    public void setReadWriteLock(ReadWriteLock readWriteLock) {
+        this.readWriteLock = readWriteLock;
+    }
+
+    public static boolean isDisablePushAllTags() {
+        return DISABLE_PUSH_ALL_TAGS;
+    }
+
+    public static void setDisablePushAllTags(boolean disablePushAllTags) {
+        DISABLE_PUSH_ALL_TAGS = disablePushAllTags;
+    }
+
+    public boolean isDebug() {
+        return debug;
+    }
+
+    public void setDebug(boolean debug) {
+        this.debug = debug;
+    }
+
+    public boolean isTabListEnabled() {
+        return tabListEnabled;
+    }
+
+    public void setTabListEnabled(boolean tabListEnabled) {
+        this.tabListEnabled = tabListEnabled;
+    }
+
+    public boolean isRefreshTagOnWorldChange() {
+        return refreshTagOnWorldChange;
+    }
+
+    public void setRefreshTagOnWorldChange(boolean refreshTagOnWorldChange) {
+        this.refreshTagOnWorldChange = refreshTagOnWorldChange;
+    }
+
+    public BukkitTask getClearEmptyTeamTask() {
+        return clearEmptyTeamTask;
+    }
+
+    public void setClearEmptyTeamTask(BukkitTask clearEmptyTeamTask) {
+        this.clearEmptyTeamTask = clearEmptyTeamTask;
+    }
+
+    public BukkitTask getRefreshNametagTask() {
+        return refreshNametagTask;
+    }
+
+    public void setRefreshNametagTask(BukkitTask refreshNametagTask) {
+        this.refreshNametagTask = refreshNametagTask;
+    }
+
+    public Configuration getConfig() {
+        return config;
+    }
+
+    public void setConfig(Configuration config) {
+        this.config = config;
+    }
+
+    public void setGroupData(List<GroupData> groupData) {
+        this.groupData = groupData;
+    }
+
+    public Map<UUID, PlayerData> getPlayerData() {
+        return playerData;
+    }
+
+    public void setPlayerData(Map<UUID, PlayerData> playerData) {
+        this.playerData = playerData;
+    }
+
+    public NametagManager getNametagManager() {
+        return nametagManager;
+    }
+
+    public void setNametagManager(NametagManager nametagManager) {
+        this.nametagManager = nametagManager;
+    }
 }

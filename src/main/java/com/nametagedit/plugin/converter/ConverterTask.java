@@ -24,6 +24,12 @@ public class ConverterTask extends BukkitRunnable {
     private CommandSender sender;
     private NametagEdit plugin;
 
+    public ConverterTask(boolean databaseToFile, CommandSender sender, NametagEdit plugin) {
+        this.databaseToFile = databaseToFile;
+        this.sender = sender;
+        this.plugin = plugin;
+    }
+
     @Override
     public void run() {
         FileConfiguration config = plugin.getHandler().getConfig();

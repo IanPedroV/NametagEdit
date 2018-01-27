@@ -28,6 +28,10 @@ public enum NametagMessages {
     FILE_MISCONFIGURED("The file %s is not properly configured. Please read the configuration guide, otherwise conversion will fail."),
     CONVERSION("Attempting to convert %s from %s to %s. (Legacy: %s)");
 
+    NametagMessages(String text) {
+        this.text = text;
+    }
+
     private final String text;
 
     @Override

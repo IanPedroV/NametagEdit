@@ -17,6 +17,12 @@ public class PlayerPriority extends BukkitRunnable {
     private int priority;
     private HikariDataSource hikari;
 
+    public PlayerPriority(UUID player, int priority, HikariDataSource hikari) {
+        this.player = player;
+        this.priority = priority;
+        this.hikari = hikari;
+    }
+
     @Override
     public void run() {
         try (Connection connection = hikari.getConnection()) {

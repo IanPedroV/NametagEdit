@@ -25,6 +25,10 @@ public class NametagCommand implements CommandExecutor, TabExecutor {
 
     private NametagHandler handler;
 
+    public NametagCommand(NametagHandler handler) {
+        this.handler = handler;
+    }
+
     private List<String> getSuggestions(String argument, String... array) {
         argument = argument.toLowerCase();
         List<String> suggestions = new ArrayList<>();

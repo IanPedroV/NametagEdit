@@ -16,6 +16,11 @@ public class PlayerDeleter extends BukkitRunnable {
     private UUID uuid;
     private HikariDataSource hikari;
 
+    public PlayerDeleter(UUID uuid, HikariDataSource hikari) {
+        this.uuid = uuid;
+        this.hikari = hikari;
+    }
+
     @Override
     public void run() {
         try (Connection connection = hikari.getConnection()) {

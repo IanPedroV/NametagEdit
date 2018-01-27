@@ -17,6 +17,11 @@ public class PlayerSaver extends BukkitRunnable {
     private PlayerData[] playerData;
     private HikariDataSource hikari;
 
+    public PlayerSaver(PlayerData[] playerData, HikariDataSource hikari) {
+        this.playerData = playerData;
+        this.hikari = hikari;
+    }
+
     @Override
     public void run() {
         try (Connection connection = hikari.getConnection()) {

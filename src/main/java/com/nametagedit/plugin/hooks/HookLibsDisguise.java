@@ -13,6 +13,10 @@ public class HookLibsDisguise implements Listener {
 
     private NametagEdit plugin;
 
+    public HookLibsDisguise(NametagEdit plugin) {
+        this.plugin = plugin;
+    }
+
     @EventHandler
     public void onDisguiseEvent(final DisguiseEvent event) {
         if (event.getEntity() instanceof Player) {

@@ -63,4 +63,27 @@ public class FakeTeam {
         return builder.toString();
     }
 
+    public static String getUniqueId() {
+        return UNIQUE_ID;
+    }
+
+    public static int getID() {
+        return ID;
+    }
+
+    public ArrayList<String> getMembers() {
+        return members;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getPrefix() {
+        return prefix;
+    }
+
+    public String getSuffix() {
+        return suffix;
+    }
 }
