@@ -80,7 +80,7 @@ public interface INametagApi {
      * @param player the player whose nametag to change
      * @param prefix the prefix to change to
      */
-    void setPrefix(String player, String prefix,String nameTagVisibility);
+    void setPrefix(String player, String prefix, String nameTagVisibility);
 
     /**
      * Sets the suffix for a player. The previous

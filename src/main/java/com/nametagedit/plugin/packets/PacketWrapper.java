@@ -23,7 +23,7 @@ public class PacketWrapper {
     }
 
     @SuppressWarnings("unchecked")
-    public PacketWrapper(String name, String prefix, String suffix, String tagVisibility, int param, Collection<?> players) {
+    public PacketWrapper(String name, String prefix, String suffix, String nameTagVisibility, int param, Collection<?> players) {
         setupDefaults(name, param);
         if (param == 0 || param == 2) {
             try {
@@ -33,8 +33,8 @@ public class PacketWrapper {
                 PacketAccessor.PACK_OPTION.set(packet, 1);
 
                 if (PacketAccessor.VISIBILITY != null) {
-                    PacketAccessor.VISIBILITY.set(packet, tagVisibility);
-                    Bukkit.getLogger().info(tagVisibility);
+                    PacketAccessor.VISIBILITY.set(packet, nameTagVisibility);
+                    Bukkit.getLogger().info(nameTagVisibility);
                 }
 
                 if (param == 0) {
