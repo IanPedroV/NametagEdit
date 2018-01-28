@@ -34,7 +34,6 @@ public class PacketWrapper {
 
                 if (PacketAccessor.VISIBILITY != null) {
                     PacketAccessor.VISIBILITY.set(packet, nameTagVisibility);
-                    Bukkit.getLogger().info(nameTagVisibility);
                 }
 
                 if (param == 0) {
