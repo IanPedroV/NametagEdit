@@ -59,6 +59,11 @@ public class PlayerData implements INametag {
     }
 
     @Override
+    public String getNameTagVisibility() {
+        return null;
+    }
+
+    @Override
     public boolean isPlayerTag() {
         return isPlayerTag();
     }

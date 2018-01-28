@@ -2,7 +2,6 @@ package com.nametagedit.plugin;
 
 import com.nametagedit.plugin.api.data.FakeTeam;
 import com.nametagedit.plugin.packets.PacketWrapper;
-import lombok.AllArgsConstructor;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
@@ -38,7 +37,7 @@ public class NametagManager {
      * Adds a player to a FakeTeam. If they are already on this team,
      * we do NOT change that.
      */
-    private void addPlayerToTeam(String player, String prefix, String suffix, int sortPriority, boolean playerTag) {
+    private void addPlayerToTeam(String player, String prefix, String suffix, String nameTagVisibility, int sortPriority, boolean playerTag) {
         FakeTeam previous = getFakeTeam(player);
 
         if (previous != null && previous.isSimilar(prefix, suffix)) {
@@ -53,7 +52,7 @@ public class NametagManager {
             joining.addMember(player);
             plugin.debug("Using existing team for " + player);
         } else {
-            joining = new FakeTeam(prefix, suffix, sortPriority, playerTag);
+            joining = new FakeTeam(prefix, suffix, nameTagVisibility, sortPriority, playerTag);
             joining.addMember(player);
             TEAMS.put(joining.getName(), joining);
             addTeamPackets(joining);
@@ -117,21 +116,21 @@ public class NametagManager {
     // ==============================================================
     // Below are public methods to modify certain data
     // ==============================================================
-    public void setNametag(String player, String prefix, String suffix) {
-        setNametag(player, prefix, suffix, -1);
+    public void setNametag(String player, String prefix, String suffix, String nameTagVisibility) {
+        setNametag(player, prefix, suffix, nameTagVisibility, -1);
     }
 
-    void setNametag(String player, String prefix, String suffix, int sortPriority) {
-        setNametag(player, prefix, suffix, sortPriority, false);
+    void setNametag(String player, String prefix, String suffix, String nameTagVisibility, int sortPriority) {
+        setNametag(player, prefix, suffix, nameTagVisibility, sortPriority, false);
     }
 
-    void setNametag(String player, String prefix, String suffix, int sortPriority, boolean playerTag) {
-        addPlayerToTeam(player, prefix != null ? prefix : "", suffix != null ? suffix : "", sortPriority, playerTag);
+    void setNametag(String player, String prefix, String suffix, String nameTagVisibility, int sortPriority, boolean playerTag) {
+        addPlayerToTeam(player, prefix != null ? prefix : "", suffix != null ? suffix : "", nameTagVisibility, sortPriority, playerTag);
     }
 
     void sendTeams(Player player) {
         for (FakeTeam fakeTeam : TEAMS.values()) {
-            new PacketWrapper(fakeTeam.getName(), fakeTeam.getPrefix(), fakeTeam.getSuffix(), 0, fakeTeam.getMembers()).send(player);
+            new PacketWrapper(fakeTeam.getName(), fakeTeam.getPrefix(), fakeTeam.getSuffix(), fakeTeam.getNameTagVisibility(), 0, fakeTeam.getMembers()).send(player);
         }
     }
 
@@ -148,7 +147,7 @@ public class NametagManager {
     // Below are private methods to construct a new Scoreboard packet
     // ==============================================================
     private void removeTeamPackets(FakeTeam fakeTeam) {
-        new PacketWrapper(fakeTeam.getName(), fakeTeam.getPrefix(), fakeTeam.getSuffix(), 1, new ArrayList<>()).send();
+        new PacketWrapper(fakeTeam.getName(), fakeTeam.getPrefix(), fakeTeam.getNameTagVisibility(), fakeTeam.getSuffix(), 1, new ArrayList<>()).send();
     }
 
     private boolean removePlayerFromTeamPackets(FakeTeam fakeTeam, String... players) {
@@ -162,7 +161,7 @@ public class NametagManager {
     }
 
     private void addTeamPackets(FakeTeam fakeTeam) {
-        new PacketWrapper(fakeTeam.getName(), fakeTeam.getPrefix(), fakeTeam.getSuffix(), 0, fakeTeam.getMembers()).send();
+        new PacketWrapper(fakeTeam.getName(), fakeTeam.getPrefix(), fakeTeam.getNameTagVisibility(), fakeTeam.getSuffix(), 0, fakeTeam.getMembers()).send();
     }
 
     private void addPlayerToTeamPackets(FakeTeam fakeTeam, String player) {

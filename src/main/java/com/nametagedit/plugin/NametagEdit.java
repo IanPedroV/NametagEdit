@@ -77,8 +77,9 @@ public class NametagEdit extends JavaPlugin {
         return true;
     }
 
+    //CHECK TAGVISIBILITY
     private void testCompat() {
-        PacketWrapper wrapper = new PacketWrapper("TEST", "&f", "", 0, new ArrayList<>());
+        PacketWrapper wrapper = new PacketWrapper("TEST", "&f", "","always", 0, new ArrayList<>());
         wrapper.send();
         if (wrapper.error == null) return;
         Bukkit.getPluginManager().disablePlugin(this);

@@ -7,5 +7,7 @@ public interface INametag {
 
     int getSortPriority();
 
+    String getNameTagVisibility();
+
     boolean isPlayerTag();
 }

@@ -407,7 +407,8 @@ public class NametagHandler implements Listener {
         new BukkitRunnable() {
             @Override
             public void run() {
-                nametagManager.setNametag(player.getName(), formatWithPlaceholders(player, nametag.getPrefix()), formatWithPlaceholders(player, nametag.getSuffix()), nametag.getSortPriority());
+                nametagManager.setNametag(player.getName(), formatWithPlaceholders(player, nametag.getPrefix()), formatWithPlaceholders(player, nametag.getSuffix()),
+                        nametag.getNameTagVisibility(), nametag.getSortPriority());
                 // If the TabList is disabled...
                 if (!tabListEnabled) {
                     // apply the default white username to the player.

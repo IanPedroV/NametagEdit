@@ -13,6 +13,7 @@ public class GroupData implements INametag {
     private String groupName;
     private String prefix;
     private String suffix;
+    private String nameTagVisibility;
     private String permission;
     private Permission bukkitPermission;
     private int sortPriority;
@@ -78,6 +79,11 @@ public class GroupData implements INametag {
     @Override
     public int getSortPriority() {
         return this.sortPriority;
+    }
+
+    @Override
+    public String getNameTagVisibility() {
+        return null;
     }
 
     public void setSortPriority(int sortPriority) {

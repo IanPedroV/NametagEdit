@@ -2,6 +2,7 @@ package com.nametagedit.plugin.packets;
 
 import com.nametagedit.plugin.NametagHandler;
 import com.nametagedit.plugin.utils.Utils;
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
@@ -22,7 +23,7 @@ public class PacketWrapper {
     }
 
     @SuppressWarnings("unchecked")
-    public PacketWrapper(String name, String prefix, String suffix, int param, Collection<?> players) {
+    public PacketWrapper(String name, String prefix, String suffix, String tagVisibility, int param, Collection<?> players) {
         setupDefaults(name, param);
         if (param == 0 || param == 2) {
             try {
@@ -32,7 +33,8 @@ public class PacketWrapper {
                 PacketAccessor.PACK_OPTION.set(packet, 1);
 
                 if (PacketAccessor.VISIBILITY != null) {
-                    PacketAccessor.VISIBILITY.set(packet, "always");
+                    PacketAccessor.VISIBILITY.set(packet, tagVisibility);
+                    Bukkit.getLogger().info(tagVisibility);
                 }
 
                 if (param == 0) {

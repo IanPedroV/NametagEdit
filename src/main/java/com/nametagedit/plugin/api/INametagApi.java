@@ -56,7 +56,7 @@ public interface INametagApi {
      * @param player the player whose nametag to change
      * @param prefix the prefix to change to
      */
-    void setPrefix(Player player, String prefix);
+    void setPrefix(Player player, String prefix,String nameTagVisibility);
 
     /**
      * Sets the suffix for a player. The previous
@@ -68,7 +68,7 @@ public interface INametagApi {
      * @param player the player whose nametag to change
      * @param suffix the suffix to change to
      */
-    void setSuffix(Player player, String suffix);
+    void setSuffix(Player player, String suffix,String nameTagVisibility);
 
     /**
      * Sets the prefix for a player. The previous
@@ -80,7 +80,7 @@ public interface INametagApi {
      * @param player the player whose nametag to change
      * @param prefix the prefix to change to
      */
-    void setPrefix(String player, String prefix);
+    void setPrefix(String player, String prefix,String nameTagVisibility);
 
     /**
      * Sets the suffix for a player. The previous
@@ -92,7 +92,7 @@ public interface INametagApi {
      * @param player the player whose nametag to change
      * @param suffix the suffix to change to
      */
-    void setSuffix(String player, String suffix);
+    void setSuffix(String player, String suffix,String nameTagVisibility);
 
     /**
      * Sets the nametag for a player.
@@ -104,7 +104,7 @@ public interface INametagApi {
      * @param prefix the prefix to change to
      * @param suffix the suffix to change to
      */
-    void setNametag(Player player, String prefix, String suffix);
+    void setNametag(Player player, String prefix, String suffix,String nameTagVisibility);
 
     /**
      * Sets the nametag for a player.
@@ -116,6 +116,6 @@ public interface INametagApi {
      * @param prefix the prefix to change to
      * @param suffix the suffix to change to
      */
-    void setNametag(String player, String prefix, String suffix);
+    void setNametag(String player, String prefix, String suffix,String nameTagVisibility);
 
 }
