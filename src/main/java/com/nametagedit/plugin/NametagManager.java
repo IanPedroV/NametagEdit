@@ -147,7 +147,7 @@ public class NametagManager {
     // Below are private methods to construct a new Scoreboard packet
     // ==============================================================
     private void removeTeamPackets(FakeTeam fakeTeam) {
-        new PacketWrapper(fakeTeam.getName(), fakeTeam.getPrefix(), fakeTeam.getNameTagVisibility(), fakeTeam.getSuffix(), 1, new ArrayList<>()).send();
+        new PacketWrapper(fakeTeam.getName(), fakeTeam.getPrefix(), fakeTeam.getSuffix(), fakeTeam.getNameTagVisibility(), 1, new ArrayList<>()).send();
     }
 
     private boolean removePlayerFromTeamPackets(FakeTeam fakeTeam, String... players) {
@@ -161,7 +161,7 @@ public class NametagManager {
     }
 
     private void addTeamPackets(FakeTeam fakeTeam) {
-        new PacketWrapper(fakeTeam.getName(), fakeTeam.getPrefix(), fakeTeam.getNameTagVisibility(), fakeTeam.getSuffix(), 0, fakeTeam.getMembers()).send();
+        new PacketWrapper(fakeTeam.getName(), fakeTeam.getPrefix(), fakeTeam.getSuffix(), fakeTeam.getNameTagVisibility(), 0, fakeTeam.getMembers()).send();
     }
 
     private void addPlayerToTeamPackets(FakeTeam fakeTeam, String player) {
