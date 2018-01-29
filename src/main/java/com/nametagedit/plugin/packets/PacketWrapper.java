@@ -32,9 +32,8 @@ public class PacketWrapper {
                 PacketAccessor.SUFFIX.set(packet, suffix);
                 PacketAccessor.PACK_OPTION.set(packet, 1);
 
-                if (PacketAccessor.VISIBILITY != null) {
+                if (PacketAccessor.VISIBILITY != null)
                     PacketAccessor.VISIBILITY.set(packet, nameTagVisibility);
-                }
 
                 if (param == 0) {
                     ((Collection) PacketAccessor.MEMBERS.get(packet)).addAll(players);

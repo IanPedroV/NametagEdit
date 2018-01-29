@@ -118,4 +118,5 @@ public interface INametagApi {
      */
     void setNametag(String player, String prefix, String suffix,String nameTagVisibility);
 
+
 }

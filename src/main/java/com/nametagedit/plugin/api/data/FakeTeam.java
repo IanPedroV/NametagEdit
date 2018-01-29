@@ -2,6 +2,7 @@ package com.nametagedit.plugin.api.data;
 
 import com.nametagedit.plugin.utils.Utils;
 import lombok.Data;
+import org.bukkit.Bukkit;
 
 import java.util.ArrayList;
 

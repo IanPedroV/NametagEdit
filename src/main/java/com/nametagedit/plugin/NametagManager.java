@@ -49,13 +49,16 @@ public class NametagManager {
 
         FakeTeam joining = getFakeTeam(prefix, suffix);
         if (joining != null) {
+            joining.setNameTagVisibility(nameTagVisibility);
             joining.addMember(player);
+            //This uses param 2 to send a team update packet type
+            addTeamPackets(joining, 2);
             plugin.debug("Using existing team for " + player);
         } else {
             joining = new FakeTeam(prefix, suffix, nameTagVisibility, sortPriority, playerTag);
             joining.addMember(player);
             TEAMS.put(joining.getName(), joining);
-            addTeamPackets(joining);
+            addTeamPackets(joining, 0);
             plugin.debug("Created FakeTeam " + joining.getName() + ". Size: " + TEAMS.size());
         }
 
@@ -69,7 +72,7 @@ public class NametagManager {
             cache(offlinePlayer.getName(), joining);
         }
 
-        plugin.debug(player + " has been added to team " + joining.getName());
+        plugin.debug(player + " has been added to team " + joining.getName() + " with visibility: " + nameTagVisibility);
     }
 
     public FakeTeam reset(String player) {
@@ -160,8 +163,8 @@ public class NametagManager {
         return fakeTeam.getMembers().isEmpty();
     }
 
-    private void addTeamPackets(FakeTeam fakeTeam) {
-        new PacketWrapper(fakeTeam.getName(), fakeTeam.getPrefix(), fakeTeam.getSuffix(), fakeTeam.getNameTagVisibility(), 0, fakeTeam.getMembers()).send();
+    private void addTeamPackets(FakeTeam fakeTeam, int param) {
+        new PacketWrapper(fakeTeam.getName(), fakeTeam.getPrefix(), fakeTeam.getSuffix(), fakeTeam.getNameTagVisibility(), param, fakeTeam.getMembers()).send();
     }
 
     private void addPlayerToTeamPackets(FakeTeam fakeTeam, String player) {

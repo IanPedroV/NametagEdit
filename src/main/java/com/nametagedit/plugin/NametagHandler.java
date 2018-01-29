@@ -401,7 +401,8 @@ public class NametagHandler implements Listener {
         }
 
         if (tempNametag == null) return;
-        plugin.debug("Applying " + (tempNametag.isPlayerTag() ? "PlayerTag" : "GroupTag") + " to " + player.getName());
+        plugin.debug("Applying " + (tempNametag.isPlayerTag() ? "PlayerTag" : "GroupTag") + " to " + player.getName() +
+                " with visibility:" + tempNametag.getNameTagVisibility());
 
         final INametag nametag = tempNametag;
         new BukkitRunnable() {
